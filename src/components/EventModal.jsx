@@ -17,6 +17,17 @@ const EventModal = ({ date, closeModal, events, setEvents }) => {
     closeModal();
   };
 
+  const handleDeleteEvent = (eventToDelete) => {
+    const updatedEvents = events.filter(
+      (event) =>
+        !(
+          event.title === eventToDelete.title &&
+          event.date === eventToDelete.date
+        )
+    );
+    setEvents(updatedEvents);
+  };
+
   const formattedDate = format(date, 'dd MMM yyyy');
 
   const eventsForDate = events.filter(
@@ -25,15 +36,25 @@ const EventModal = ({ date, closeModal, events, setEvents }) => {
 
   return (
     <div className="modal">
-      <div className={`modal-content`}>
+      <div className="modal-content">
         <span className="close-btn" onClick={closeModal}>
           ❌
         </span>
         <h2>Events on {formattedDate}</h2>
 
-        <ul>
+        <ul style={{ paddingLeft: '0' }}>
           {eventsForDate.length > 0 ? (
-            eventsForDate.map((event, index) => <li key={index}>{event.title}</li>)
+            eventsForDate.map((event, index) => (
+              <li key={index} className="event-item">
+                <span>{event.title}</span>
+                <button
+                  className="delete-btn"
+                  onClick={() => handleDeleteEvent(event)}
+                >
+                  Remove
+                </button>
+              </li>
+            ))
           ) : (
             <li>No events for this day.</li>
           )}
