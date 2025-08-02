@@ -347,3 +347,13 @@ body.dark .modal-content button:hover {
 body.dark .close-btn {
   color: #ff5f5f;
 }
+
+.date-cell.today {
+  border: 2px solid #007bff;
+  background-color: #e9f3ff;
+}
+
+body.dark .date-cell.today {
+  border: 2px solid #4da3ff;
+  background-color: #1a273a;
+}
