@@ -27,7 +27,7 @@ const ListView = ({ events, setEvents }) => {
 
   return (
     <div>
-      <h2 style={{ marginTop: '20px' }}>📋 List View </h2>
+      
       <ul style={{ listStyleType: 'none', padding: 0 }}>
         {daysInYear.map((day) => {
           const dayEvents = getEventsForDate(day);

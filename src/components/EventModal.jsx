@@ -33,7 +33,7 @@ const EventModal = ({ date, closeModal, events, setEvents }) => {
 
         <ul>
           {eventsForDate.length > 0 ? (
-            eventsForDate.map((event, index) => <li key={index}>• {event.title}</li>)
+            eventsForDate.map((event, index) => <li key={index}>{event.title}</li>)
           ) : (
             <li>No events for this day.</li>
           )}

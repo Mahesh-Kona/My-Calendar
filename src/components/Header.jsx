@@ -3,7 +3,7 @@ import React from 'react';
 const Header = ({ viewMode, setViewMode }) => {
   return (
     <div className="header">
-      <h1>📅 My Calendar</h1>
+      <h1>My Calendar</h1>
       <div className="button-group">
         <button
           className={viewMode === 'grid' ? 'active' : ''}

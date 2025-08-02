@@ -66,7 +66,10 @@ const CalendarGrid = ({ events, setEvents }) => {
         {calendarDays.map((day) => (
           <div
             key={day.toISOString()}
-            className={`date-cell ${!isSameMonth(day, monthStart) ? 'outside-month' : ''}`}
+            className={`date-cell 
+              ${!isSameMonth(day, monthStart) ? 'outside-month' : ''} 
+              ${isSameDay(day, new Date()) ? 'today' : ''}
+            `}
             onClick={() => openModal(day)}
           >
             <strong>{format(day, 'd')}</strong>
